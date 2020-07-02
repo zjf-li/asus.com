@@ -1,0 +1,245 @@
+@charset "utf8";
+.header-logo {
+  width: 1226px;
+  margin: 0 auto;
+}
+.header {
+  padding-top: 23px;
+  background-color: #fff;
+  position: relative;
+}
+.header .header-logo {
+  height: 77px;
+  overflow: hidden;
+}
+.main-box {
+  background-color: #fdbf58;
+  min-height: 655px;
+}
+.main-box .login_bg_box {
+  padding-top: 80px;
+  width: 1200px;
+  margin: 0 auto;
+  height: 465px;
+}
+.main-box .login-warp {
+  width: 380px;
+  min-height: 435px;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  margin-left: 230px;
+  padding: 15px;
+  background: #fff;
+  overflow: hidden;
+}
+.main-box .login-warp .login-ewm {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  text-align: right;
+  width: 50%;
+}
+.main-box .login-warp .login-ewm .login-ewm-hint {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  border: 1px solid #fdbf58;
+  padding: 3px 11px;
+  background: #fdffb7;
+  height: 16px;
+  line-height: 16px;
+}
+.main-box .login-warp .login-ewm .login-ewm-hint img {
+  display: inline-block;
+  width: 13px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.main-box .login-warp .login-ewm .login-ewm-hint a {
+  color: #00bbff;
+}
+.main-box .login-warp .login-ewm .login-code {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main-box .login-warp .login-title {
+  height: 44px;
+  font-size: 24px;
+  padding: 0;
+  border-bottom: none;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.main-box .login-warp .login-title p {
+  text-align: center;
+  width: 290px;
+  display: inline-block;
+  vertical-align: bottom;
+  position: relative;
+}
+.main-box .login-warp .login-title p i {
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background-color: #ccc;
+}
+.main-box .login-warp .login-title p a {
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 24px;
+  color: #8a8a8a;
+}
+.main-box .login-warp .login-title p .active {
+  color: #00a8ff;
+}
+.main-box .login-warp .login-con {
+  margin-left: 15px;
+}
+.main-box .login-warp .login-con .x-input {
+  padding-left: 12px;
+  padding-right: 0;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+  width: 336px;
+  color: #262626;
+  position: relative;
+  border: 1px solid #ccc;
+}
+.main-box .login-warp .login-con .account {
+  width: 350px;
+  height: 50px;
+  margin-bottom: 16px;
+}
+.main-box .login-warp .login-con .verify {
+  width: 350px;
+  position: relative;
+}
+.main-box .login-warp .login-con .verify .get-code {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  padding: 11.5px 0;
+  border-left: 1px solid #ccc;
+  width: 120px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+}
+.main-box .login-warp .login-con .verify .get-code:hover {
+  color: #777;
+}
+.main-box .login-warp .login-con .hint a {
+  font-size: 12px;
+  color: #008aff;
+  line-height: 1;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.main-box .login-warp .login-con .clause {
+  height: 15px;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.main-box .login-warp .login-con .clause p {
+  font-size: 12px;
+}
+.main-box .login-warp .login-con .clause p input {
+  float: left;
+  height: 13px;
+  margin: 0;
+}
+.main-box .login-warp .login-con .clause p span {
+  float: left;
+  margin-left: 3px;
+  color: #666;
+}
+.main-box .login-warp .login-con .clause p span a {
+  font-size: 12px;
+  color: #0563c3;
+}
+.main-box .login-warp .login-con .clause p span a:hover {
+  color: #777;
+}
+.main-box .login-warp .login-con .login-btn {
+  width: 350px;
+  height: 50px;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.main-box .login-warp .login-con .login-btn span {
+  color: #fff;
+  display: block;
+  width: 350px;
+  height: 50px;
+  background: #00a8ff;
+  cursor: pointer;
+  line-height: 50px;
+  font-size: 14px;
+}
+.main-box .login-warp .login-con .forget-password {
+  margin-bottom: 10px;
+}
+.main-box .login-warp .login-con .forget-password p {
+  text-align: right;
+  padding-right: 30px;
+}
+.main-box .login-warp .login-con .forget-password p a {
+  display: block;
+  padding: 0 5px;
+  font-size: 14px;
+}
+.main-box .login-warp .login-con .third-login {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  position: relative;
+  overflow: visible;
+  margin-top: 55px;
+  height: 73px;
+  width: 350px;
+}
+.main-box .login-warp .login-con .third-login .third-login-title {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  width: 210px;
+  height: 48px;
+  background-color: #fff;
+  margin-left: -105px;
+}
+.main-box .login-warp .login-con .third-login .third-login-title span {
+  height: 24px;
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+.main-box .login-warp .login-con .third-login .third-login-title span a {
+  color: #0563c3;
+}
+.main-box .login-warp .login-con .third-login .third-login-title span a:hover {
+  color: #777;
+}
+.main-box .login-warp .login-con .third-login .wx {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+}
+.main-box .login-warp .login-con .third-login .wx a {
+  display: block;
+}
+.main-box .login-warp .login-con .third-login .wx a img {
+  width: 37px;
+  height: 37px;
+}
