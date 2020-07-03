@@ -26,13 +26,49 @@
 .center .page .page-maincontent .product-container .product-side .product-album {
   width: 500px;
   height: 500px;
+  position: relative;
+}
+.center .page .page-maincontent .product-container .product-side .product-album .big {
+  width: 400px;
+  height: 300px;
+  left: 520px;
+  top: 0px;
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  z-index: 10000;
+  overflow: hidden;
+  background-color: #fff;
+}
+.center .page .page-maincontent .product-container .product-side .product-album .big img {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 0px;
 }
 .center .page .page-maincontent .product-container .product-side .product-album .product-big-img {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 .center .page .page-maincontent .product-container .product-side .product-album .product-big-img img {
   width: 100%;
   height: 100%;
+}
+.center .page .page-maincontent .product-container .product-side .product-album .product-big-img span {
+  position: absolute;
+  width: 250px;
+  height: 180px;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #b3d5ff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  line-height: 1;
+  cursor: move;
+  display: block;
 }
 .center .page .page-maincontent .product-container .product-side .product-min-img {
   position: relative;

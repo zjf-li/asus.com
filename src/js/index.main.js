@@ -5,7 +5,8 @@ require.config({
     }
 })
 require(['index'], function(index) {
-    console.log(index);
+    // console.log(index);
 
     index.render()
+    index.banner()
 })

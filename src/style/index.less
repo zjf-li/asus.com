@@ -12,6 +12,7 @@
     margin: 0 auto;
     width: 100%;
     .banner-img{
+        
         overflow: hidden;
         width: 1920px;
         height: 500px;
@@ -19,26 +20,25 @@
         left: 50%;
         margin-left: -960px;
         div{
-            width: 100%;
+            width: 1000%;
             height: 500px;
             position: absolute;
             top: 0;
-
             a {
-                display: block;
+                float: left;
+                // display:inline-block;
                 width: 1920px;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 1920px;
-            img{
-                width: 100%;
                 height: 500px;
+                
+                img{
+                    width: 100%;
+                    height: 500px;
+                    border:0;
+                    vertical-align:middle;
+                }
             }
-            }
-            a:nth-child(1){
-                left: 0;
-            }
+            
+            
         }
     }
     .banner-warp{

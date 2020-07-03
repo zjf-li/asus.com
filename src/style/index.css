@@ -23,25 +23,21 @@
   margin-left: -960px;
 }
 .banner .banner-img div {
-  width: 100%;
+  width: 1000%;
   height: 500px;
   position: absolute;
   top: 0;
 }
 .banner .banner-img div a {
-  display: block;
+  float: left;
   width: 1920px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 1920px;
+  height: 500px;
 }
 .banner .banner-img div a img {
   width: 100%;
   height: 500px;
-}
-.banner .banner-img div a:nth-child(1) {
-  left: 0;
+  border: 0;
+  vertical-align: middle;
 }
 .banner .banner-warp {
   position: relative;

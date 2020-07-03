@@ -48,6 +48,9 @@
   background-color: #fff;
   margin-bottom: 10px;
 }
+.center .page .cart-page .cart-header ul {
+  margin-bottom: 5px;
+}
 .center .page .cart-page .cart-header ul li {
   float: left;
   font-size: 16px;
@@ -91,6 +94,9 @@
   margin-bottom: 10px;
   padding: 0;
   background: none;
+}
+.center .page .cart-page .cart-list ul {
+  margin-bottom: 5px;
 }
 .center .page .cart-page .cart-list ul li {
   float: left;
@@ -164,6 +170,9 @@
   margin-top: 20px;
   width: 375px;
   font-size: 14px;
+}
+.center .page .cart-page .cart-list .cart-item .check-all {
+  margin-top: 0;
 }
 .center .page .cart-page .cart-list .cart-item .cart-num {
   margin-top: 40px;

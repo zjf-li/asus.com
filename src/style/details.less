@@ -26,11 +26,49 @@
                     .product-album{
                         width: 500px;
                         height: 500px;
+                        position: relative;
+                        .big{
+                            position: absolute;
+                            width: 400px;
+                            height: 300px;
+                            left: 520px;
+                            top: 0px;
+                            display: none;
+                            position: absolute;
+                            border: 1px solid #ccc;
+                            z-index: 10000;
+                            overflow: hidden;
+                            background-color: #fff;
+                            img{
+                                position: absolute;
+                                display: block;
+                                left: 0px;
+                                top: 0px;
+                            }
+                        }
                         .product-big-img{
                             display: block;
+                            width: 100%;
+                                height: 100%;
                             img{
                                 width: 100%;
                                 height: 100%;
+                            }
+                            span{
+                                position: absolute;
+                                width: 250px;
+                                height: 180px;
+                                // visibility: hidden;
+                                left: 0px;
+                                top: 0px;
+                                z-index: 10;
+                                overflow: hidden;
+                                background-color: #b3d5ff;
+                                opacity: .5;
+                                filter: alpha(opacity=50);
+                                line-height: 1;
+                                cursor: move;
+                                display: block;
                             }
                         }
                     }
