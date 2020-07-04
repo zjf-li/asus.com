@@ -59,6 +59,7 @@
   position: absolute;
   width: 250px;
   height: 180px;
+  display: none;
   left: 0px;
   top: 0px;
   z-index: 10;
@@ -68,7 +69,6 @@
   filter: alpha(opacity=50);
   line-height: 1;
   cursor: move;
-  display: block;
 }
 .center .page .page-maincontent .product-container .product-side .product-min-img {
   position: relative;
@@ -90,6 +90,7 @@
   overflow: hidden;
 }
 .center .page .page-maincontent .product-container .product-side .product-min-img .product-min-img-list ul {
+  position: absolute;
   width: 900px;
   height: 100%;
   margin-left: 0;

@@ -65,6 +65,79 @@
 .banner .banner-warp .menu li a:hover {
   background-color: #00a8ff;
 }
+.banner .banner-warp .menu-con .menu-hide {
+  display: none;
+}
+.banner .banner-warp .menu-con .sub-box {
+  line-height: 24px;
+  position: absolute;
+  left: 234px;
+  top: 0;
+  background-color: #fff;
+  z-index: 9998;
+  overflow: hidden;
+  height: 500px;
+  width: 808px;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box {
+  width: 460px;
+  float: left;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt {
+  float: left;
+  width: 154px;
+  padding-left: 10px;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a {
+  display: block;
+  color: #000;
+  height: 40px;
+  line-height: 20px;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a img {
+  width: 40px;
+  margin-right: 8px;
+  float: left;
+  max-height: 40px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a span {
+  margin-top: 10px;
+  float: left;
+  max-height: 40px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dd {
+  margin-left: 164px;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-box dl dd a {
+  display: block;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  color: #3f3a39;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-ad {
+  width: 345px;
+  padding-left: 3px;
+  height: 500px;
+  float: right;
+  text-align: right;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-ad a {
+  display: block;
+}
+.banner .banner-warp .menu-con .sub-box .sub-category-ad a img {
+  width: 345px;
+  height: 500px;
+}
 .banner .banner-warp .banner-btn-l,
 .banner .banner-warp .banner-btn-r {
   display: block;

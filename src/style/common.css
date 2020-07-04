@@ -64,6 +64,7 @@
 .header {
   height: 77px;
   padding-top: 23px;
+  position: relative;
 }
 .header .logo {
   float: left;
@@ -83,6 +84,94 @@
 }
 .header .nav li a:hover {
   color: #00a8ff;
+}
+.header .hot-show {
+  min-height: 89px;
+  background-color: #fff;
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  padding-top: 15px;
+  top: 100px;
+  display: none;
+}
+.header .hot-show ul {
+  width: 1180px;
+  margin: 0 auto;
+  width: 1226px;
+  height: 180px;
+  background-color: #fff;
+  z-index: 111111;
+  padding: 10px 0 25px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.header .hot-show ul li {
+  padding: 0 17px 5px 0;
+  width: 190px;
+  min-height: 130px;
+  text-align: left;
+  float: left;
+  cursor: default;
+}
+.header .hot-show ul li a {
+  display: block;
+  background-color: #fff;
+  color: #333;
+}
+.header .hot-show ul li a:hover {
+  color: #00a8ff;
+}
+.header .hot-show ul li a img {
+  width: 190px;
+  height: 130px;
+  box-sizing: border-box;
+}
+.header .hot-show ul li a p {
+  padding-top: 3px;
+  font-size: 14px;
+}
+.header .nav-list-show {
+  display: none;
+  min-height: 89px;
+  background-color: #fff;
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+  transition: all 0.4s ease-in-out;
+  top: 100px;
+}
+.header .nav-list-show ul {
+  display: block;
+  overflow: hidden;
+  width: 1226px;
+  min-height: 50px;
+  margin: 0 auto;
+  margin-left: 70px;
+}
+.header .nav-list-show ul li {
+  width: 175px;
+  height: 80px;
+  float: left;
+  text-align: center;
+  opacity: 0.5;
+}
+.header .nav-list-show ul li a {
+  color: #666666;
+  font-size: 14px;
+}
+.header .nav-list-show ul li a:hover {
+  color: #00a8ff;
+}
+.header .nav-list-show ul li a p {
+  font-size: 14px;
+}
+.header .nav-list-show ul li a p img {
+  vertical-align: middle;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 .header .search {
   float: right;

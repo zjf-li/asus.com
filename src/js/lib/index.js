@@ -1,6 +1,7 @@
 let baseUrl = 'http://localhost/asus.com';
 
 define(['jquery'], function($) {
+
     return {
         render: function() {
             $.ajax({
@@ -52,7 +53,7 @@ define(['jquery'], function($) {
 
             function doSlider() {
                 page.removeClass('page-color').eq(idx % (len - 1)).addClass('page-color');
-                console.log(idx);
+
 
                 bannerImgBox.stop().animate({
                     left: -(idx) * widLi
@@ -64,11 +65,10 @@ define(['jquery'], function($) {
 
                     if (idx == -1) {
                         idx = len - 2;
-                        console.log(idx);
-                        console.log(len);
+
                         bannerImgBox.css('left', -(idx) * widLi + 'px');
                     }
-                    console.log(idx);
+
 
                 })
             }
@@ -104,10 +104,99 @@ define(['jquery'], function($) {
 
 
 
+        },
+        nav: function() {
+            $('.nav li').on('mouseover', function() {
+
+                // 判断当前移入的li的index 是不是指定的li
+                if ($(this).index() == $(".nav-item-link").index()) {
+                    $('.hot-show').css({
+                        'display': 'block'
+                    })
+                }
+
+                if ($(this).index() == $(".js-drop-show").index()) {
+                    $('.nav-list-show').css({
+                        'display': 'block'
+                    })
+                    $('.nav-list-show ul').animate({
+                        'margin-left': 0
+                    }, 300)
+                    $('.nav-list-show ul li').css({
+                        opacity: 1
+                    }).on('mouseover', function() {
+                        $(this).css({
+                            opacity: 1
+                        }).siblings().css({
+                            opacity: 0.5
+                        })
+                    })
+                } else {
+                    $('.nav-list-show ul').css({
+                        'margin-left': 70
+                    })
+                }
+
+            })
+
+            // 鼠标移出li 隐藏
+            $('.nav-item-link').on('mouseout', function() {
+                $('.hot-show').css({
+                    'display': 'none'
+                })
+            })
+
+            $('.js-drop-show').on('mouseout', function() {
+                $('.nav-list-show').css({
+                    'display': 'none'
+                })
+            })
+
+
+            // 鼠标移动到li的内容 内容不隐藏  
+            $('.hot-show').hover(function() {
+                $('.hot-show').css({
+                    'display': 'block'
+                })
+            }, function() {
+                $('.hot-show').css({
+                    'display': 'none'
+                })
+
+            })
+
+            $('.nav-list-show').hover(function() {
+                $('.nav-list-show').css({
+                    'display': 'block'
+                })
+            }, function() {
+                $('.nav-list-show').css({
+                    'display': 'none'
+                })
+
+            })
+
+
+
+        },
+        menu: function() {
+            $('.menu li').on('mouseover', function() {
+                let index = $(this).index();
+                $('.menu-con>.sub-box').eq(index).removeClass('menu-hide').siblings().addClass('menu-hide')
+            })
+            $('.menu').on(('mouseout'), function() {
+                $('.menu-con>.sub-box').addClass('menu-hide')
+            })
+
+
+
         }
 
 
+
     }
+
+
 
 
 })

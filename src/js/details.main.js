@@ -10,9 +10,16 @@ require(['details'], function(details) {
     details.render(function(id, price) {
         $('.product-buy-cart>span').on('click', function() {
             details.addItem(id, price, $('.item-content>input').val());
-        })
-    });
-    details.amount()
-    details.maxImg()
 
+
+        })
+
+    }, function() {
+        details.maxImg()
+    });
+
+
+    details.amount()
+    details.timer()
+    details.choose()
 })

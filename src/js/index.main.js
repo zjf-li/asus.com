@@ -9,4 +9,6 @@ require(['index'], function(index) {
 
     index.render()
     index.banner()
+    index.nav()
+    index.menu()
 })
