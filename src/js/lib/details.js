@@ -2,19 +2,19 @@ let baseUrl = 'http://localhost/asus.com';
 define(['jquery', 'cookie'], function($, cookie) {
     return {
         render: function(callback, callback2) {
-            let shopId = location.search.split('=')[1];
+
+            let shopId = location.search.split('=')[1]; //获取地址栏的id
             $.ajax({
                 type: 'get',
                 url: `${baseUrl}/interface/getshop.php`,
-                data: { id: shopId },
+                data: { id: shopId }, //根据id请求数据
                 dataType: 'json',
                 success: function(res) {
-                    let temp = '';
-                    let bigIMg = '';
-                    let productTitles = '';
+                    let temp = ''; //放大镜图片列表渲染
+                    let bigIMg = ''; //  当放大镜显示渲染
+                    let productTitles = ''; //产品数据 渲染
                     res.forEach(elm => {
                         let img = JSON.parse(elm.img)
-
                         temp += `
                             <ul class="clear">
                             <li>
@@ -38,7 +38,6 @@ define(['jquery', 'cookie'], function($, cookie) {
                         </ul>
                         
                         `;
-
 
                         bigIMg = `
                         <a href="" class="product-big-img">
@@ -68,7 +67,7 @@ define(['jquery', 'cookie'], function($, cookie) {
 
                     console.log(res[0].id);
 
-                    callback && callback(res[0].id, res[0].price)
+                    callback && callback(res[0].id, res[0].price) //回调addItem函数
                     callback && callback2()
 
                 }
@@ -79,34 +78,33 @@ define(['jquery', 'cookie'], function($, cookie) {
 
         },
         addItem: function(id, price, num) {
-            let shop = cookie.get('shop');
-
-            let product = {
+            let shop = cookie.get('shop'); //获取cookie
+            let product = { //参数对象
                 id: id,
                 price: price,
                 num: num
             }
-            if (shop) {
+            if (shop) { //如果有cookie 
                 shop = JSON.parse(shop);
-                if (shop.some(elm => elm.id == id)) {
-                    shop.forEach(elm => {
+                if (shop.some(elm => elm.id == id)) { //判断cookie的id是否和传过来的id相等
+                    shop.forEach(elm => { //循环 cookie的内容 判断id  然后给当前num给赋值
                         elm.id == id ? elm.num = num : null;
                     });
                 } else {
-                    shop.push(product)
+                    shop.push(product) //否则直接添加对象
                 }
             } else {
                 shop = [];
                 shop.push(product);
             }
-            cookie.set('shop', JSON.stringify(shop), 1);
+            cookie.set('shop', JSON.stringify(shop), 1); //设置cookie
         },
         amount: function() {
 
-            $('.btn-decrease').on('click', function() {
+            $('.btn-decrease').on('click', function() { //给数量加减按钮添加事件
                 let count = $(this).next().val();
                 count--
-                if (count < 1) {
+                if (count < 1) { //边界处理
                     count = 1
                     $(this).next().val(count);
                 } else {
@@ -136,6 +134,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                 lis = $('.product-min-img-list>ul>li>img'), //列表图片
                 samllImg = $('.product-big-img>img') //内容图片
 
+            // 鼠标移入时显示 移动盒子 和大图片显示盒子
             smallpic.on('mouseover', function() {
                 movebox.css({
                     'display': 'block'
@@ -144,13 +143,14 @@ define(['jquery', 'cookie'], function($, cookie) {
                     'display': 'block'
                 })
 
-                movebox.css({
+                movebox.css({ //根据比例设置 移动盒子的大小
                     'width': (smallpic.width() * big.width()) / bigpic.width() + 'px',
                     'height': (smallpic.height() * big.height()) / bigpic.height() + 'px'
                 });
 
 
                 smallpic.on('mousemove', function(ev) {
+                    //获取当前位置
                     let top = ev.pageY - smallpic.offset().top - movebox.height() / 2;
                     let left = ev.pageX - smallpic.offset().left - movebox.width() / 2;
 
@@ -172,14 +172,12 @@ define(['jquery', 'cookie'], function($, cookie) {
                     }
 
                     movebox.css({
-
                         top: top + "px",
                         left: left + 'px'
                     })
 
 
                     bigpic.css({
-
                         top: -top * ratio + 'px',
                         left: -left * ratio + 'px'
                     })
@@ -187,7 +185,8 @@ define(['jquery', 'cookie'], function($, cookie) {
                 })
 
             })
-            smallpic.on('mouseout', function() {
+
+            smallpic.on('mouseout', function() { //移出隐藏
                 movebox.css({
                     'display': 'none'
                 })
@@ -197,13 +196,13 @@ define(['jquery', 'cookie'], function($, cookie) {
             })
 
 
-            lis.on('click', function() {
+            lis.on('click', function() { //点击图片列表，改变大盒子和展示盒子的图片src
                 let url = $(this).attr('src')
                 samllImg.attr('src', url);
                 bigpic.attr('src', url);
             })
 
-            $('.product-min-img-l').on('click', function() {
+            $('.product-min-img-l').on('click', function() { //列表图片的移动
                 //获取当前ul的left值
                 let left = parseFloat(ulBox.css('left'))
                 left += 100
@@ -217,7 +216,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                 }, 500)
             })
             $('.product-min-img-r').on('click', function() {
-                let left = parseFloat(ulBox.css('left'))
+                let left = parseFloat(ulBox.css('left')) //当前列表图片的盒子的left
                 left -= 100
                     //计算隐藏图片
                 if (left <= -(lis.length - 4) * 100) {
@@ -229,7 +228,7 @@ define(['jquery', 'cookie'], function($, cookie) {
             })
 
         },
-        timer: function() {
+        timer: function() { // 秒杀倒计时
             let starttime = new Date("2021/1/1");
             setInterval(function() {
                 let nowtime = new Date();
@@ -241,16 +240,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                 $('.timer').html(day + "天" + hour + "小时" + minute + "分钟" + seconds + "秒");
             }, 1000);
         },
-        choose: function() {
-            $('.display-card li').on('click', function() {
-                $(this).addClass('selected').siblings().removeClass('selected');
 
-            })
-            $('.deploy li').on('click', function() {
-                $(this).addClass('selected').siblings().removeClass('selected');
-
-            })
-        }
 
 
     }

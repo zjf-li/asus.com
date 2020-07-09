@@ -1,14 +1,14 @@
 require.config({
     paths: {
         jquery: "./jquery.min",
-        index: "./lib/index"
+        index: "./lib/index",
+        common: './lib/common'
     }
 })
-require(['index'], function(index) {
-    // console.log(index);
+require(['index', 'common'], function(index, common) {
 
     index.render()
     index.banner()
-    index.nav()
+    common.nav()
     index.menu()
 })

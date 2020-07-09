@@ -2,11 +2,13 @@ require.config({
     paths: {
         jquery: "./jquery.min",
         details: "./lib/details",
-        cookie: './lib/cookie'
+        cookie: './lib/cookie',
+        common: './lib/common'
     }
 });
 
-require(['details'], function(details) {
+require(['details', 'common'], function(details, common) {
+    common.nav()
     details.render(function(id, price) {
         $('.product-buy-cart>span').on('click', function() {
             details.addItem(id, price, $('.item-content>input').val());
@@ -21,5 +23,5 @@ require(['details'], function(details) {
 
     details.amount()
     details.timer()
-    details.choose()
+        // details.choose()
 })

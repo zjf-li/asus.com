@@ -12,7 +12,6 @@
     margin: 0 auto;
     width: 100%;
     .banner-img{
-        
         overflow: hidden;
         width: 1920px;
         height: 500px;
@@ -25,7 +24,9 @@
             position: absolute;
             top: 0;
             a {
-                float: left;
+                position: absolute;
+                left: 1920px;
+                top: 0;
                 // display:inline-block;
                 width: 1920px;
                 height: 500px;
@@ -37,6 +38,9 @@
                     vertical-align:middle;
                 }
             }
+            a:nth-child(1){
+                left: 0;
+            }
             
             
         }
@@ -44,17 +48,27 @@
     .banner-warp{
         position: relative;
         height: 500px;
-        .menu{
+        .menu-box{
+            height: 100%;
             position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .menu{
+            // position: absolute;
+            float: left;
             background-color: rgba(0,0,0,.7);
             top: 0;
             left: 0;
             width: 234px;
             height: 500px;
             li{
+                &:hover .sub-box{
+                    display: block;
+                }
                 margin-bottom: 11.25px;
                 padding-top: 11.25px;
-                a{
+               .menu-name{
                     padding-left: 16px;
                     display: block;
                     height: 40px;
@@ -64,86 +78,159 @@
                         background-color: #00a8ff;
                     }
                 }
+                .sub-box{
+                    display: none;
+                    line-height: 24px;
+                    position: absolute;
+                    left: 234px;
+                    top: 0;
+                    background-color: #fff;
+                    z-index: 9998;
+                    overflow: hidden;
+                    height: 500px;
+                    width: 808px;
+                    .sub-category-box{
+                        width: 460px;
+                        float: left;
+                        dl{
+                            border-bottom: 1px solid #ccc;
+                            padding: 10px 0;
+                            dt{
+                                float: left;
+                                width: 154px;
+                                padding-left: 10px;
+                                a{
+                                    display: block;
+                                    color: #000;
+                                    height: 40px;
+                                    line-height: 20px;
+                                    img{
+                                        width: 40px;
+                                        margin-right: 8px;
+                                        float: left;
+                                        max-height: 40px;
+                                        overflow: hidden;
+                                        vertical-align: middle;
+                                    
+                                    }
+                                    span{
+                                        margin-top: 10px;
+                                        float: left;
+                                        
+                                        max-height: 40px;
+                                        overflow: hidden;
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                            dd{
+                                margin-left: 164px;
+                                a{
+                                    display: block;
+                                    float: left;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    padding: 0 10px;
+                                    color: #3f3a39;
+                                }
+                            }
+                        }
+                    }
+                    .sub-category-ad{
+                        width: 345px;
+                        padding-left: 3px;
+                        height: 500px;
+                        float: right;
+                        text-align: right;
+                        a{
+                            display: block;
+                            img{
+                                width: 345px;
+                                height: 500px;
+                            }
+                        }
+                    }
+                }
             }
         }
         .menu-con{
+        float: left;
+            // .menu-hide{
+            //     display: none;
+            // }
 
-            .menu-hide{
-                display: none;
-            }
-            
-            .sub-box{
-                line-height: 24px;
-                position: absolute;
-                left: 234px;
-                top: 0;
-                background-color: #fff;
-                z-index: 9998;
-                overflow: hidden;
-                height: 500px;
-                width: 808px;
-                .sub-category-box{
-                    width: 460px;
-                    float: left;
-                    dl{
-                        border-bottom: 1px solid #ccc;
-                        padding: 10px 0;
-                        dt{
-                            float: left;
-                            width: 154px;
-                            padding-left: 10px;
-                            a{
-                                display: block;
-                                color: #000;
-                                height: 40px;
-                                line-height: 20px;
-                                img{
-                                    width: 40px;
-                                    margin-right: 8px;
-                                    float: left;
-                                    max-height: 40px;
-                                    overflow: hidden;
-                                    vertical-align: middle;
+            // .sub-box{
+            //     line-height: 24px;
+            //     position: absolute;
+            //     left: 234px;
+            //     top: 0;
+            //     background-color: #fff;
+            //     z-index: 9998;
+            //     overflow: hidden;
+            //     height: 500px;
+            //     width: 808px;
+            //     .sub-category-box{
+            //         width: 460px;
+            //         float: left;
+            //         dl{
+            //             border-bottom: 1px solid #ccc;
+            //             padding: 10px 0;
+            //             dt{
+            //                 float: left;
+            //                 width: 154px;
+            //                 padding-left: 10px;
+            //                 a{
+            //                     display: block;
+            //                     color: #000;
+            //                     height: 40px;
+            //                     line-height: 20px;
+            //                     img{
+            //                         width: 40px;
+            //                         margin-right: 8px;
+            //                         float: left;
+            //                         max-height: 40px;
+            //                         overflow: hidden;
+            //                         vertical-align: middle;
                                 
-                                }
-                                span{
-                                    margin-top: 10px;
-                                    float: left;
+            //                     }
+            //                     span{
+            //                         margin-top: 10px;
+            //                         float: left;
                                     
-                                    max-height: 40px;
-                                    overflow: hidden;
-                                    vertical-align: middle;
-                                }
-                            }
-                        }
-                        dd{
-                            margin-left: 164px;
-                            a{
-                                display: block;
-                                float: left;
-                                height: 40px;
-                                line-height: 40px;
-                                padding: 0 10px;
-                                color: #3f3a39;
-                            }
-                        }
-                    }
-                }
-                .sub-category-ad{
-                    width: 345px;
-                    padding-left: 3px;
-                    height: 500px;
-                    float: right;
-                    text-align: right;
-                    a{
-                        display: block;
-                        img{
-                            width: 345px;
-                            height: 500px;
-                        }
-                    }
-                }
-            }
+            //                         max-height: 40px;
+            //                         overflow: hidden;
+            //                         vertical-align: middle;
+            //                     }
+            //                 }
+            //             }
+            //             dd{
+            //                 margin-left: 164px;
+            //                 a{
+            //                     display: block;
+            //                     float: left;
+            //                     height: 40px;
+            //                     line-height: 40px;
+            //                     padding: 0 10px;
+            //                     color: #3f3a39;
+            //                 }
+            //             }
+            //         }
+            //     }
+            //     .sub-category-ad{
+            //         width: 345px;
+            //         padding-left: 3px;
+            //         height: 500px;
+            //         float: right;
+            //         text-align: right;
+            //         a{
+            //             display: block;
+            //             img{
+            //                 width: 345px;
+            //                 height: 500px;
+            //             }
+            //         }
+            //     }
+            // }
         }
         .banner-btn-l,.banner-btn-r{
             display: block;

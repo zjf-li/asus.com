@@ -6,15 +6,14 @@ define(['jquery'], function($) {
         render: function() {
             $.ajax({
                 type: 'get',
-                url: `${baseUrl}/interface/getall.php`,
+                url: `${baseUrl}/interface/getall.php`, //请求数据
                 dataType: 'json',
                 success: function(res) {
-                    console.log(res);
+                    // 拿到返回数据渲染到页面上
                     let temp = '';
                     res.forEach(elm => {
                         var img = JSON.parse(elm.img);
-                        // console.log(img);
-                        // console.log(img.img[0]);
+
                         temp += `
                             <li class="li-bottom">
                                 <a href="${baseUrl}/src/html/details.html?id=${elm.id}"><img src="${baseUrl}/src/${img.img[0]}" alt=""></a>
@@ -39,155 +38,85 @@ define(['jquery'], function($) {
             })
         },
         banner: function() {
-            let bannerBox = $('.banner-img'),
+            let bannerBox = $('.banner-img'), //轮播图盒子
                 bannerImgBox = $('.banner-img>div'),
-                bannerImgs = $('.banner-img>div>a'),
-                len = bannerImgs.length,
-                widLi = bannerImgs.eq(0).width(),
-                page = $('.banner-page>li'),
-                bannerBtnL = $('.banner-btn-l'),
-                bannerBtnR = $('.banner-btn-r'),
-                timer = null,
+                bannerImgs = $('.banner-img>div>a'), //轮播图片
+                len = bannerImgs.length, //图片数量 
+                widLi = bannerImgs.eq(0).width(), //图片宽度
+                page = $('.banner-page>li'), //小圆圈
+                bannerBtnL = $('.banner-btn-l'), // left 
+                bannerBtnR = $('.banner-btn-r'), //right
+                timer = null, //定时器
                 idx = 0;
 
 
-            function doSlider() {
-                page.removeClass('page-color').eq(idx % (len - 1)).addClass('page-color');
+            function goImg(transidx) {
+                if (transidx == idx) { //如果传过来的数值是当前图片的数值，直接return
+                    return
+                }
 
 
-                bannerImgBox.stop().animate({
-                    left: -(idx) * widLi
-                }, 1000, function() {
-                    if (idx == len - 1) {
-                        idx = 0;
-                        bannerImgBox.css('left', -(idx) * widLi + 'px');
-                    }
+                let outidx = idx; // 当前显示的图片
+                idx = transidx; // 下一张要显示的图片
 
-                    if (idx == -1) {
-                        idx = len - 2;
+                // 边界处理
 
-                        bannerImgBox.css('left', -(idx) * widLi + 'px');
-                    }
+                if (idx > len - 1) {
+                    idx = 0;
+                } else if (idx < 0) {
+                    idx = len - 1
+                }
 
-
+                bannerImgs.eq(outidx).animate({ //当前图片移出
+                    "left": -widLi
+                }, 300);
+                bannerImgs.eq(idx).css({ // 下一张图片准备
+                    "left": widLi
+                });
+                bannerImgs.eq(idx).animate({ //下一张图片移入
+                    "left": 0
+                }, 300);
+                page.eq(outidx).css({ //小圈圈改变颜色
+                    "background": "#fff"
                 })
+                page.eq(idx).css({
+                    "background": "#00a8ff"
+                })
+
             }
 
-            $('.banner').hover(function() {
-                clearInterval(timer);
+            function autoPlay() { // 自动轮播
+                timer = setInterval(function() {
+                    goImg(idx + 1)
+                }, 2000)
+            }
+
+            function stopPaly() { // 消除定时器
+                clearInterval(timer)
+                timer = null;
+            }
+
+            page.click(function() { //点击小圆圈跳转
+                stopPaly()
+                goImg($(this).index())
+            })
+
+            bannerBox.hover(function() { //移入停止移出开始
+                stopPaly()
             }, function() {
-                timer = setInterval(slider, 3000);
-            });
+                autoPlay();
+            })
 
-            function slider() {
-                idx++;
-                doSlider();
-            }
-
-            timer = setInterval(slider, 3000);
-            // 点击上一张按钮切换图片
-            bannerBtnL.click(function() {
-                idx--;
-                doSlider();
-            });
-            // 点击下一张按钮切换图片	
+            bannerBtnL.click(function() { //点击左边按钮切换
+                stopPaly()
+                goImg(idx - 1)
+            })
             bannerBtnR.click(function() {
-                idx++;
-                doSlider();
-            });
-            // 点击圆点切换图片
-            page.click(function() {
-                idx = $(this).index();
-                doSlider();
-            });
-
-
-
-
-        },
-        nav: function() {
-            $('.nav li').on('mouseover', function() {
-
-                // 判断当前移入的li的index 是不是指定的li
-                if ($(this).index() == $(".nav-item-link").index()) {
-                    $('.hot-show').css({
-                        'display': 'block'
-                    })
-                }
-
-                if ($(this).index() == $(".js-drop-show").index()) {
-                    $('.nav-list-show').css({
-                        'display': 'block'
-                    })
-                    $('.nav-list-show ul').animate({
-                        'margin-left': 0
-                    }, 300)
-                    $('.nav-list-show ul li').css({
-                        opacity: 1
-                    }).on('mouseover', function() {
-                        $(this).css({
-                            opacity: 1
-                        }).siblings().css({
-                            opacity: 0.5
-                        })
-                    })
-                } else {
-                    $('.nav-list-show ul').css({
-                        'margin-left': 70
-                    })
-                }
-
+                stopPaly()
+                goImg(idx + 1)
             })
 
-            // 鼠标移出li 隐藏
-            $('.nav-item-link').on('mouseout', function() {
-                $('.hot-show').css({
-                    'display': 'none'
-                })
-            })
-
-            $('.js-drop-show').on('mouseout', function() {
-                $('.nav-list-show').css({
-                    'display': 'none'
-                })
-            })
-
-
-            // 鼠标移动到li的内容 内容不隐藏  
-            $('.hot-show').hover(function() {
-                $('.hot-show').css({
-                    'display': 'block'
-                })
-            }, function() {
-                $('.hot-show').css({
-                    'display': 'none'
-                })
-
-            })
-
-            $('.nav-list-show').hover(function() {
-                $('.nav-list-show').css({
-                    'display': 'block'
-                })
-            }, function() {
-                $('.nav-list-show').css({
-                    'display': 'none'
-                })
-
-            })
-
-
-
-        },
-        menu: function() {
-            $('.menu li').on('mouseover', function() {
-                let index = $(this).index();
-                $('.menu-con>.sub-box').eq(index).removeClass('menu-hide').siblings().addClass('menu-hide')
-            })
-            $('.menu').on(('mouseout'), function() {
-                $('.menu-con>.sub-box').addClass('menu-hide')
-            })
-
+            autoPlay();
 
 
         }

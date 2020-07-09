@@ -98,6 +98,9 @@
 .main-box .login-warp .login-title p .active {
   color: #00a8ff;
 }
+.main-box .login-warp .login-con-hide {
+  display: none;
+}
 .main-box .login-warp .login-con {
   margin-left: 15px;
 }
@@ -120,6 +123,7 @@
 .main-box .login-warp .login-con .verify {
   width: 350px;
   position: relative;
+  margin-bottom: 10px;
 }
 .main-box .login-warp .login-con .verify .get-code {
   display: block;
@@ -140,8 +144,17 @@
   font-size: 12px;
   color: #008aff;
   line-height: 1;
-  margin-top: -10px;
+  padding: 10px 0;
+}
+.main-box .login-warp .login-con .hint span {
+  height: 16px;
+  line-height: 16px;
+  display: block;
+  color: #00a8ff;
+  font-size: 14px;
   margin-bottom: 10px;
+  margin-top: 10px;
+  display: none;
 }
 .main-box .login-warp .login-con .clause {
   height: 15px;
@@ -179,6 +192,24 @@
   margin-bottom: 10px;
 }
 .main-box .login-warp .login-con .login-btn span {
+  color: #fff;
+  display: block;
+  width: 350px;
+  height: 50px;
+  background: #00a8ff;
+  cursor: pointer;
+  line-height: 50px;
+  font-size: 14px;
+}
+.main-box .login-warp .login-con .login-phone-btn {
+  width: 350px;
+  height: 50px;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.main-box .login-warp .login-con .login-phone-btn span {
   color: #fff;
   display: block;
   width: 350px;
@@ -242,4 +273,27 @@
 .main-box .login-warp .login-con .third-login .wx a img {
   width: 37px;
   height: 37px;
+}
+.code {
+  text-align: center;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 120px;
+  left: 500px;
+  background-color: #fff;
+  display: none;
+}
+.code p {
+  line-height: 200px;
+  font-size: 50px;
+}
+.code span {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 30px;
+}
+.code span:hover {
+  color: #0563c3;
 }

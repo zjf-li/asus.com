@@ -25,6 +25,7 @@
     </div>
     <div class="login-warp">
         <div class="login-ewm">
+        
             <div class="login-ewm-hint">
                 <img src="../img/login/login/saoma.png" alt="">
                 <a href="">扫码登录在这里</a>
@@ -37,26 +38,58 @@
         </div>
         <div class="login-title">
             <p>
-                <a href="" class="phone-login active">验证码登录</a>
+                <a href="javascript:;" class="phone-login active">验证码登录</a>
                 <i></i>
-                <a href="" class="account-login">账号登录</a>
+                <a href="javascript:;" class="account-login">账号登录</a>
             </p>
+        </div>
+        <div class="login-con login-con-hide">
+            <form action="">
+                <p class="account">
+                    <input class="x-input" type="text" value="" name="mobile" placeholder="用户名/邮箱地址/手机号" maxlength="11">
+                </p>
+                <p class="verify">
+                    <input class="x-input" type="text" placeholder="填写密码" value="">
+                </p>
+                <p class="hint">
+                    <span>请填写合法手机号</span>
+                </p>
+                <div class="login-phone-btn">
+                    <span>立即登录/注册</span>
+                </div>
+                <div class="forget-password ">
+                    <p><a href=" ">忘记密码?</a></p>
+                </div>
+                <div class="third-login ">
+                    <div class="third-login-title ">
+                        <span>您可以使用社交帐号 </span>
+                        <span>直接登录 <a href=" ">华硕会员</a> ，无需注册</span>
+                    </div>
+                    <div class="wx ">
+                        <a href=" " >
+                            <img src="../img/login/login/weixin.png " alt=" ">
+                        </a>
+                    </div>
+                    
+                </div>
+            </form>
         </div>
         <div class="login-con">
             <form action="">
                 <p class="account">
-                    <input class="x-input" type="text" value="" name="mobile" placeholder="手机号" maxlength="11">
+                    <input class="x-input js-x-input" type="text" value="" placeholder="手机号" maxlength="11">
                 </p>
                 <p class="verify">
-                    <input class="x-input" type="text" name="verificode" placeholder="短信验证码" value="" ">
-                        <a href="" class="get-code">获取验证码</a>   
+                    <input class="x-input js-x-input" type="text" placeholder="短信验证码" value="">
+                        <a href="JavaScript:;" class="get-code">获取验证码</a>   
                 </p>
                 <p class="hint">
-                    <a href="">未注册的手机号，系统将自动为您创建帐号</a>
+                    <a href=" ">未注册的手机号，系统将自动为您创建帐号</a>
+                    <span>请填写合法手机号</span>
                 </p>
                 <div class="clause">
                     <p >
-                        <input type="checkbox" name=" " id=" ">
+                        <input type="checkbox" name=" " id="" >
                         <span>我已阅读并同意 
                             <a href=" ">ASUS使用条款</a>
                             和 
@@ -68,17 +101,17 @@
                 <div class="login-btn">
                     <span>立即登录/注册</span>
                 </div>
-                <div class="forget-password">
-                    <p><a href="">忘记密码?</a></p>
+                <div class="forget-password ">
+                    <p><a href=" ">忘记密码?</a></p>
                 </div>
-                <div class="third-login">
-                    <div class="third-login-title">
+                <div class="third-login ">
+                    <div class="third-login-title ">
                         <span>您可以使用社交帐号 </span>
-                        <span>直接登录 <a href="">华硕会员</a> ，无需注册</span>
+                        <span>直接登录 <a href=" ">华硕会员</a> ，无需注册</span>
                     </div>
-                    <div class="wx">
-                        <a href="" >
-                            <img src="../img/login/login/weixin.png" alt="">
+                    <div class="wx ">
+                        <a href=" " >
+                            <img src="../img/login/login/weixin.png " alt=" ">
                         </a>
                     </div>
                     
@@ -87,5 +120,11 @@
         </div>
     </div>
 </div>
+<div class="code">
+    <p>1234</p>
+    <span>X</span>
+</div>
 
+
+<script src="../js/require.js " data-main="../js/login.main"></script>
 </html>

@@ -29,7 +29,9 @@
   top: 0;
 }
 .banner .banner-img div a {
-  float: left;
+  position: absolute;
+  left: 1920px;
+  top: 0;
   width: 1920px;
   height: 500px;
 }
@@ -39,12 +41,21 @@
   border: 0;
   vertical-align: middle;
 }
+.banner .banner-img div a:nth-child(1) {
+  left: 0;
+}
 .banner .banner-warp {
   position: relative;
   height: 500px;
 }
-.banner .banner-warp .menu {
+.banner .banner-warp .menu-box {
+  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+}
+.banner .banner-warp .menu {
+  float: left;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
@@ -55,20 +66,21 @@
   margin-bottom: 11.25px;
   padding-top: 11.25px;
 }
-.banner .banner-warp .menu li a {
+.banner .banner-warp .menu li:hover .sub-box {
+  display: block;
+}
+.banner .banner-warp .menu li .menu-name {
   padding-left: 16px;
   display: block;
   height: 40px;
   color: #fff;
   line-height: 40px;
 }
-.banner .banner-warp .menu li a:hover {
+.banner .banner-warp .menu li .menu-name:hover {
   background-color: #00a8ff;
 }
-.banner .banner-warp .menu-con .menu-hide {
+.banner .banner-warp .menu li .sub-box {
   display: none;
-}
-.banner .banner-warp .menu-con .sub-box {
   line-height: 24px;
   position: absolute;
   left: 234px;
@@ -79,26 +91,26 @@
   height: 500px;
   width: 808px;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box {
+.banner .banner-warp .menu li .sub-box .sub-category-box {
   width: 460px;
   float: left;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dt {
   float: left;
   width: 154px;
   padding-left: 10px;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dt a {
   display: block;
   color: #000;
   height: 40px;
   line-height: 20px;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a img {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dt a img {
   width: 40px;
   margin-right: 8px;
   float: left;
@@ -106,17 +118,17 @@
   overflow: hidden;
   vertical-align: middle;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dt a span {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dt a span {
   margin-top: 10px;
   float: left;
   max-height: 40px;
   overflow: hidden;
   vertical-align: middle;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dd {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dd {
   margin-left: 164px;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-box dl dd a {
+.banner .banner-warp .menu li .sub-box .sub-category-box dl dd a {
   display: block;
   float: left;
   height: 40px;
@@ -124,19 +136,22 @@
   padding: 0 10px;
   color: #3f3a39;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-ad {
+.banner .banner-warp .menu li .sub-box .sub-category-ad {
   width: 345px;
   padding-left: 3px;
   height: 500px;
   float: right;
   text-align: right;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-ad a {
+.banner .banner-warp .menu li .sub-box .sub-category-ad a {
   display: block;
 }
-.banner .banner-warp .menu-con .sub-box .sub-category-ad a img {
+.banner .banner-warp .menu li .sub-box .sub-category-ad a img {
   width: 345px;
   height: 500px;
+}
+.banner .banner-warp .menu-con {
+  float: left;
 }
 .banner .banner-warp .banner-btn-l,
 .banner .banner-warp .banner-btn-r {
