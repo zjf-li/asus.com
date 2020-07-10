@@ -1,4 +1,4 @@
-let baseUrl = 'http://localhost/asus.com';
+let baseUrl = 'http://10.31.161.33/asus.com';
 define(['jquery', 'cookie'], function($, cookie) {
     return {
         render: function(callback, callback2) {
@@ -98,6 +98,8 @@ define(['jquery', 'cookie'], function($, cookie) {
                 shop.push(product);
             }
             cookie.set('shop', JSON.stringify(shop), 1); //设置cookie
+            console.log(shop);
+
         },
         amount: function() {
 

@@ -2,15 +2,19 @@ require.config({
     paths: {
         jquery: './jquery.min',
         shopcart: './lib/shopcart',
-        cookie: './lib/cookie'
+        cookie: './lib/cookie',
+        common: './lib/common'
     }
 })
 
-require(['shopcart'], function(shopcart) {
-
+require(['shopcart', 'common'], function(shopcart, common) {
 
     shopcart.render(function() {
         shopcart.settlement()
+    });
+    common.nav();
+    common.cart(function() {
+        common.catrShow()
     })
 
 })

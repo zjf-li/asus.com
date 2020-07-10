@@ -1,5 +1,5 @@
-define(['jquery'], function($) {
-    let baseUrl = 'http://localhost/asus.com';
+define(['jquery', 'cookie'], function($, cookie) {
+    let baseUrl = 'http://10.31.161.33/asus.com';
     return {
         nav: function() {
             $('.nav li').on('mouseover', function() { //鼠标移入触发事件
@@ -41,11 +41,15 @@ define(['jquery'], function($) {
                 $('.hot-show').css({
                     'display': 'none'
                 })
+
             })
 
             $('.js-drop-show').on('mouseout', function() {
                 $('.nav-list-show').css({
                     'display': 'none'
+                })
+                $('.nav-list-show ul').css({ //
+                    'margin-left': 70
                 })
             })
 
@@ -70,11 +74,100 @@ define(['jquery'], function($) {
                 $('.nav-list-show').css({
                     'display': 'none'
                 })
+                $('.nav-list-show ul').css({ //
+                    'margin-left': 70
+                })
 
             })
 
 
 
         },
+        cart: function(callback) {
+            let shop = cookie.get('shop'); //获取cookie
+            let idlist
+            if (shop) { //判断有没有cookie
+                shop = JSON.parse(shop) //转成数组
+                $('.shop-car').css({
+                    'background': '#0092de',
+                })
+                $('.shop-car>a').css({
+                    'color': '#fff',
+                })
+
+                $('.shop-car>i').css({
+                    'color': '#fff',
+                })
+
+
+                idlist = shop.map(elm => elm.id).join(); // 把每个id取出来
+            } else {
+
+            }
+
+            $.ajax({
+                type: 'get',
+                url: `${baseUrl}/interface/shop.php`,
+                data: {
+                    idlist: idlist
+                },
+                dataType: 'json',
+                success: function(res) {
+                    console.log(res);
+
+                    let temp = '';
+                    let temp2 = '';
+                    let num = 0;
+                    console.log(res);
+
+
+                    res.forEach(elm => {
+                        let img = JSON.parse(elm.img)
+                        let arr = shop.filter(val => val.id == elm.id); //过滤id
+                        temp +=
+                            `<li>
+                                <div class="goods-pic">
+                                    <a href="">
+                                        <img src="${baseUrl}/src/${img.img[0]}" alt="">
+                                    </a>
+                                </div>
+                                <div class="goods-info">
+                                    <h3 class="goods-name">
+                                        <p>${elm.title}</p>
+                                    </h3>
+                                    <div class="goods-price">
+                                        x <span>${arr[0].num}</span> <strong> X </strong> </div>
+                                </div>
+                            </li>
+                        `
+                        num += parseInt(elm.price)
+
+                    });
+                    $('.goods>ul').html(temp)
+
+                    $('.minicart-info-l').html(
+                        `
+                        <p>共${res.length}件商品</p>
+                        <p>￥${num}</p>
+                        `
+                    )
+                    $('.shop-car>a').html(`购物车(${res.length})`)
+
+                    callback && callback()
+
+                }
+            })
+        },
+        catrShow: function() {
+            $('.shop-car').hover(function() {
+                $('.shop-car .goods').css({
+                    'display': 'block'
+                }, 500)
+            }, function() {
+                $('.shop-car .goods').css({
+                    'display': 'none'
+                })
+            })
+        }
     }
 })

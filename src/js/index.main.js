@@ -2,7 +2,8 @@ require.config({
     paths: {
         jquery: "./jquery.min",
         index: "./lib/index",
-        common: './lib/common'
+        common: './lib/common',
+        cookie: './lib/cookie'
     }
 })
 require(['index', 'common'], function(index, common) {
@@ -10,5 +11,8 @@ require(['index', 'common'], function(index, common) {
     index.render()
     index.banner()
     common.nav()
-    index.menu()
+    common.cart(function() {
+        common.catrShow()
+    })
+
 })

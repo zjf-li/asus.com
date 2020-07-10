@@ -424,6 +424,14 @@
   border-color: #a9a9a9;
   text-align: center;
   font-size: 16px;
+  outline: none;
+}
+.center .page .page-maincontent .product-container .product-main .product-buy .product-action ul .product-buy-quantity .item-content input::-webkit-outer-spin-button,
+.center .page .page-maincontent .product-container .product-main .product-buy .product-action ul .product-buy-quantity .item-content input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.center .page .page-maincontent .product-container .product-main .product-buy .product-action ul .product-buy-quantity .item-content input[type="number"] {
+  -moz-appearance: textfield;
 }
 .center .page .page-maincontent .product-container .product-main .product-buy .product-action ul .product-buy-quantity .item-content .btn-increase {
   color: #b3b3b3;

@@ -164,6 +164,8 @@
   background-color: transparent;
   text-align: center;
   line-height: 40px;
+  font-size: 30px;
+  color: #fff;
 }
 .banner .banner-warp .banner-btn-l:hover,
 .banner .banner-warp .banner-btn-r:hover {
@@ -178,6 +180,7 @@
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   right: 0px;
+  font-size: 48px;
 }
 .banner .banner-warp .banner-page {
   position: absolute;
@@ -257,9 +260,11 @@
   display: block;
   text-align: center;
   line-height: 18px;
+  font-size: 18px;
 }
 .hot-sale span i:nth-child(1) {
   border-right: 1px solid #ccc;
+  font-size: 12px;
 }
 .hot-sale .common-header span {
   position: absolute;
@@ -277,9 +282,11 @@
   display: block;
   text-align: center;
   line-height: 18px;
+  font-size: 18px;
 }
 .hot-sale .common-header span i:nth-child(1) {
   border-right: 1px solid #ccc;
+  font-size: 12px;
 }
 .hot-sale .hot-goods {
   overflow: hidden;

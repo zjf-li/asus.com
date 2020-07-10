@@ -1,4 +1,4 @@
-let baseUrl = 'http://localhost/asus.com';
+let baseUrl = 'http://10.31.161.33/asus.com';
 
 define(['jquery'], function($) {
 
@@ -119,7 +119,8 @@ define(['jquery'], function($) {
             autoPlay();
 
 
-        }
+        },
+
 
 
 

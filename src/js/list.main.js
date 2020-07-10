@@ -8,8 +8,10 @@ require.config({
 });
 
 require(['list', 'common'], function(list, common) {
-    console.log(1);
 
-    common.nav()
-    list.moreScreening()
+    common.nav();
+    list.moreScreening();
+    common.cart(function() {
+        common.catrShow()
+    })
 })

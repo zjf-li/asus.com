@@ -1,4 +1,4 @@
-let baseUrl = 'http://localhost/asus.com';
+let baseUrl = 'http://10.31.161.33/asus.com';
 
 define(['jquery', 'cookie'], function($, cookie) {
     return {
@@ -20,14 +20,12 @@ define(['jquery', 'cookie'], function($, cookie) {
                     dataType: 'json',
                     success: function(res) {
 
-
                         let temp = '';
 
                         res.forEach(elm => {
                             let img = JSON.parse(elm.img);
 
                             let arr = shop.filter(val => val.id == elm.id); //过滤id
-
 
                             temp += `
                             <div class="cart-item" >
@@ -82,14 +80,9 @@ define(['jquery', 'cookie'], function($, cookie) {
             shop = JSON.parse(shop)
             console.log(shop);
             $('.cart-action').click(function() { //当点击删除按钮删除对应的商品
-
-
-
                 $.each(shop, function(i, elm) {
                     if (elm.id == $(this).attr("data-id")) {
-
                         shop.split(i, 1)
-
                     }
                 })
                 $(this).parent().parent().remove();
